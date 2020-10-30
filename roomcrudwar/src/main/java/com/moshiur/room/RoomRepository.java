@@ -5,7 +5,7 @@
  */
 package com.moshiur.room;
 
-import com.moshiur.room.Room;
+
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -21,25 +21,24 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 @Transactional
-public class RoomRepository implements RoomService{
+public class RoomRepository implements RoomService {
 
-   @Autowired
+    @Autowired
     SessionFactory sessionFactory;
-    
-    
+
     @Override
     public List<Room> viewAllRoom() {
         Session session = sessionFactory.getCurrentSession();
         List<Room> roomList = session.createQuery("from Room").list();
-        return roomList;    
+        return roomList;
     }
 
     @Override
     public Room viewOneRoom(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Room room = (Room)session.get(Room.class, id);
+        Room room = (Room) session.get(Room.class, id);
         return room;
-    
+
     }
 
     @Override
@@ -58,8 +57,9 @@ public class RoomRepository implements RoomService{
     @Override
     public void deleteRoom(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Room room = (Room)session.get(Room.class, id);
-        session.delete(room);  }
+        Room room = (Room) session.get(Room.class, id);
+        session.delete(room);
+    }
 
     @Override
     public List<Room> viewByType(String type) {
@@ -68,18 +68,17 @@ public class RoomRepository implements RoomService{
         crit.add(Restrictions.eq("type", type));
         List<Room> allRooms = crit.list();
         return allRooms;
-    
+
     }
 
     @Override
-    public List<Room> viewBySize(int size) {
+    public List<Room> viewBySize(String size) {
         Session session = sessionFactory.getCurrentSession();
         Criteria crit = session.createCriteria(Room.class);
         crit.add(Restrictions.eq("size", size));
         List<Room> allRooms = crit.list();
         return allRooms;
-               
-    
+
     }
-    
+
 }
