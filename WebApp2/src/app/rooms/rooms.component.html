@@ -1,0 +1,54 @@
+<div class="col-md-6">
+    <h1 class="text-center">Add Room</h1>
+    <!-- <form> -->
+    <div class="form-group">
+        <label for="roomid">Room Id</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="roomService.currentRoom.id"
+            name="custid">
+    </div>
+    <div class="form-group">
+        <label for="roomno">Room No</label>
+        <input type="text" class="form-control" id="roomNo" required
+            [(ngModel)]="roomService.currentRoom.roomNo" name="custname">
+    </div>
+    <div class="form-group">
+        <label for="phoneno">Room Type.</label>
+            <select name="roomtype" id="roomT" required [(ngModel)]="roomService.currentRoom.type">
+                <option value="AC">AC</option>
+                <option value="Non-Ac">NON-AC</option>
+            </select>
+    </div>
+
+    <div class="form-group">
+        <label for="phoneno">Room Size.</label>
+            <select name="roomtype" id="roomT" required [(ngModel)]="roomService.currentRoom.size">
+                <option value="single">single</option>
+                <option value="double">double</option>
+                <option value="triple">triple</option>
+                <option value="queen">queen</option>
+            </select>
+    </div>
+
+    <div class="form-group">
+        <label for="roomno">Rent</label>
+        <input type="number" class="form-control" id="roomrent" required
+            [(ngModel)]="roomService.currentRoom.rent" name="rent">
+    </div>
+
+    
+
+
+
+
+    <!-- <div type="submit" class="btn btn-info">Add</div> -->
+    <button type="submit" class="btn btn-success" (click)="createRoom(roomService.currentRoom)">Add
+    </button>&nbsp;
+    <button type="submit" class="btn btn-info"
+        (click)="updateRoom(roomService.currentRoom)">Update</button>&nbsp;
+    <button type="submit" class="btn btn-primary" (click)="clear()">Refresh</button>
+    <!-- </form> -->
+
+
+
+</div>
+

@@ -26,6 +26,8 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column
+    private String roomNo;
+    @Column
     private String size;
     @Column
     private String type;
@@ -35,8 +37,9 @@ public class Room {
     public Room() {
     }
 
-    public Room(Integer id, String size, String type, double price) {
+    public Room(Integer id,String roomNo, String size, String type, double price) {
         this.id = id;
+        this.roomNo = roomNo;
         this.size = size;
         this.type = type;
         this.price = price;
@@ -49,6 +52,16 @@ public class Room {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public String getRoomNo() {
+        return roomNo;
+    }
+
+    public void setRoomNo(String roomNo) {
+        this.roomNo = roomNo;
+    }
+    
+    
 
     public String getSize() {
         return size;

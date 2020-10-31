@@ -23,8 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author MIRAGE
  */
-@RestController
+
+
 @CrossOrigin(origins="http://localhost:4200")
+@RestController
 public class RoomController {
 
     @Autowired
@@ -69,7 +71,7 @@ public class RoomController {
         currentRoom.setSize(room.getSize());
         currentRoom.setType(room.getType());
         currentRoom.setPrice(room.getPrice());
-
+        currentRoom.setRoomNo(room.getRoomNo());
         roomService.updateRoom(currentRoom);
 
         return new ResponseEntity<Room>(currentRoom, HttpStatus.OK);
