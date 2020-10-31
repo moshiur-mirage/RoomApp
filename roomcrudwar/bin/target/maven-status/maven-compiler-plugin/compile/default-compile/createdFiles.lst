@@ -1,0 +1,9 @@
+com\moshiur\RoomcrudwarApplication.class
+com\moshiur\room\ReportRepository.class
+com\moshiur\room\ReportController.class
+com\moshiur\room\Room.class
+com\moshiur\room\RoomService.class
+com\moshiur\ServletInitializer.class
+com\moshiur\HibernateConfig.class
+com\moshiur\room\RoomRepository.class
+com\moshiur\room\RoomController.class
