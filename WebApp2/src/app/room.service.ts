@@ -14,7 +14,7 @@ const headerOption = {
   providedIn: 'root',
 })
 export class RoomService {
-  public baseUrl = 'http://localhost:8080/room';
+  public baseUrl = 'http://localhost:8090/roomcrudwar/room';
  
 
   currentRoom: Room = {
@@ -37,7 +37,7 @@ export class RoomService {
   }
 
   createRoom(room: Room): Observable<Room> {
-    return this.http.post<Room>(this.baseUrl2, room, headerOption).pipe(
+    return this.http.post<Room>(this.baseUrl, room, headerOption).pipe(
       tap(() => {
         this._refreshNeeded$.next();
       })
