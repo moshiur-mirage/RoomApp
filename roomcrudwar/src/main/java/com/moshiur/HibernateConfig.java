@@ -14,29 +14,22 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-/**
- *
- * @author MIRAGE
- */
-
 @Configuration
 @EnableTransactionManagement
-@EnableAutoConfiguration(exclude = {HibernateJpaAutoConfiguration.class})
+@EnableAutoConfiguration(exclude = { HibernateJpaAutoConfiguration.class})
 public class HibernateConfig {
-
     @Bean
     public HibernateTemplate hibernateTemplate() {
         return new HibernateTemplate(sessionFactory().getObject());
     }
-
     @Bean
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(getDataSource());
-        sessionFactory.setPackagesToScan(new String[]{"com.moshiur.room"});
+        sessionFactory.setPackagesToScan(new String[] { "com.moshiur.room" });
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
-    }
+     }
 
     @Bean
     public DataSource getDataSource() {
@@ -47,15 +40,13 @@ public class HibernateConfig {
         dataSource.setPassword("mira");
         return dataSource;
     }
-
     @Bean
     @Autowired
     public HibernateTransactionManager transactionManager(SessionFactory s) {
-        HibernateTransactionManager txManager = new HibernateTransactionManager();
-        txManager.setSessionFactory(s);
-        return txManager;
+       HibernateTransactionManager txManager = new HibernateTransactionManager();
+       txManager.setSessionFactory(s);
+       return txManager;
     }
-
     private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
@@ -63,6 +54,6 @@ public class HibernateConfig {
         properties.put("hibernate.format_sql", false);
         properties.put("hibernate.hbm2ddl.auto", "update");
         properties.put("hibernate.use_sql_commnets", true);
-        return properties;
+        return properties;        
     }
 }

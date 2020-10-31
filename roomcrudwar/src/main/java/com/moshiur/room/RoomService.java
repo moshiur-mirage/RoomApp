@@ -5,7 +5,7 @@
  */
 package com.moshiur.room;
 
-
+import com.moshiur.room.Room;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
@@ -15,19 +15,19 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface RoomService {
-
+    
     //get list
     public List<Room> viewAllRoom();
 
     //get one
     public Room viewOneRoom(int id);
-
+    
     //save
     public Room saveRoom(Room room);
 
     //update
     public void updateRoom(Room room);
-
+    
     //Delete
     public void deleteRoom(int id);
 
@@ -35,5 +35,5 @@ public interface RoomService {
     public List<Room> viewByType(String type);
 
     //getBySize
-    public List<Room> viewBySize(String size);
+    public List<Room> viewBySize(int size);
 }

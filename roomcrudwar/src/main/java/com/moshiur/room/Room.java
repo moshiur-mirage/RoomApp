@@ -5,7 +5,7 @@
  */
 package com.moshiur.room;
 
-
+import static java.awt.font.TransformAttribute.IDENTITY;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,29 +20,25 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class Room {
-
+    
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;    
     @Column
-    private String roomNo;
-    @Column
-    private String size;
+    private int size;
     @Column
     private String type;
-    @Column
-    private double price;
+    
+    
 
     public Room() {
     }
 
-    public Room(Integer id,String roomNo, String size, String type, double price) {
+    public Room(Integer id, int size, String type) {
         this.id = id;
-        this.roomNo = roomNo;
         this.size = size;
         this.type = type;
-        this.price = price;
     }
 
     public Integer getId() {
@@ -53,21 +49,11 @@ public class Room {
         this.id = id;
     }
 
-    public String getRoomNo() {
-        return roomNo;
-    }
-
-    public void setRoomNo(String roomNo) {
-        this.roomNo = roomNo;
-    }
-    
-    
-
-    public String getSize() {
+    public int getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(int size) {
         this.size = size;
     }
 
@@ -78,13 +64,9 @@ public class Room {
     public void setType(String type) {
         this.type = type;
     }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
+    
+    
+    
+    
+    
 }

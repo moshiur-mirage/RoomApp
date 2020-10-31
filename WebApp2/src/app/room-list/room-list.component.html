@@ -2,20 +2,16 @@
     <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Room No</th>
             <th scope="col">Room Type</th>
             <th scope="col">Room Size</th>
-            <th scope="col">Rent</th>
 
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let room of allRoom">
             <td scope="row">{{room.id}}</td>
-            <td>{{room.roomNo}}</td>
             <td>{{room.type}}</td>
             <td>{{room.size}}</td>
-            <td>{{room.rent}}</td>
             <td>
                 <a class="btn btn-outline-primary" (click)="editRoom(room)">
                     

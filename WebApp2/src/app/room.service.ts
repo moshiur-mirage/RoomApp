@@ -14,14 +14,14 @@ const headerOption = {
   providedIn: 'root',
 })
 export class RoomService {
-  private baseUrl = 'http://localhost:8080/room';
+  public baseUrl = 'http://localhost:8080/room';
+ 
 
   currentRoom: Room = {
     id: null,
-    roomNo: '',
     type: '',
-    size: '',
-    rent: null,
+    size: null
+    
   };
 
   constructor(private http: HttpClient) {}
@@ -37,12 +37,16 @@ export class RoomService {
   }
 
   createRoom(room: Room): Observable<Room> {
-    return this.http.post<Room>(this.baseUrl, room, headerOption).pipe(
+    return this.http.post<Room>(this.baseUrl2, room, headerOption).pipe(
       tap(() => {
         this._refreshNeeded$.next();
       })
     );
   }
+
+  // createRoom(room: object): Observable<object> {  
+  //   return this.http.post(`${this.baseUrl2}`, room,headerOption),pipe;  
+  // }
 
   updateRoom(room: Room): Observable<Room> {
     return this.http.put<Room>(this.baseUrl + '/' + room.id, room).pipe(

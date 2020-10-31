@@ -37,10 +37,8 @@ export class RoomsComponent implements OnInit {
   clear() {
     this.roomService.currentRoom = {
       id: null,
-      roomNo: '',
       type: '',
-      size: '',
-      rent: null,
+      size: null,
     };
   }
 }

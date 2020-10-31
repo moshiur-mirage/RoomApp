@@ -6,34 +6,22 @@
         <input type="text" class="form-control" id="name" [(ngModel)]="roomService.currentRoom.id"
             name="custid">
     </div>
-    <div class="form-group">
-        <label for="roomno">Room No</label>
-        <input type="text" class="form-control" id="roomNo" required
-            [(ngModel)]="roomService.currentRoom.roomNo" name="custname">
-    </div>
+
     <div class="form-group">
         <label for="phoneno">Room Type.</label>
             <select name="roomtype" id="roomT" required [(ngModel)]="roomService.currentRoom.type">
-                <option value="AC">AC</option>
+                <option value="ac">AC</option>
                 <option value="Non-Ac">NON-AC</option>
             </select>
     </div>
 
     <div class="form-group">
-        <label for="phoneno">Room Size.</label>
-            <select name="roomtype" id="roomT" required [(ngModel)]="roomService.currentRoom.size">
-                <option value="single">single</option>
-                <option value="double">double</option>
-                <option value="triple">triple</option>
-                <option value="queen">queen</option>
-            </select>
+        <label for="roomno">Room size</label>
+        <input type="number" class="form-control" id="number" required
+            [(ngModel)]="roomService.currentRoom.size" name="sizeroom">
     </div>
 
-    <div class="form-group">
-        <label for="roomno">Rent</label>
-        <input type="number" class="form-control" id="roomrent" required
-            [(ngModel)]="roomService.currentRoom.rent" name="rent">
-    </div>
+
 
     
 
