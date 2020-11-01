@@ -15,13 +15,12 @@ const headerOption = {
 })
 export class RoomService {
   public baseUrl = 'http://localhost:8090/roomcrudwar/room';
- 
 
   currentRoom: Room = {
     id: null,
     type: '',
-    size: null
-    
+    size: null,
+    rent: null,
   };
 
   constructor(private http: HttpClient) {}
@@ -43,10 +42,6 @@ export class RoomService {
       })
     );
   }
-
-  // createRoom(room: object): Observable<object> {  
-  //   return this.http.post(`${this.baseUrl2}`, room,headerOption),pipe;  
-  // }
 
   updateRoom(room: Room): Observable<Room> {
     return this.http.put<Room>(this.baseUrl + '/' + room.id, room).pipe(

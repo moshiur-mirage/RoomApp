@@ -42,7 +42,7 @@ public class RoomController {
     }
     
     @GetMapping("room/size/{size}")
-    public List<Room>getBySize(@PathVariable("size") int size){
+    public List<Room>getBySize(@PathVariable("size") String size){
         List roomList = roomService.viewBySize(size);
         return roomList;
     }
@@ -73,6 +73,7 @@ public class RoomController {
         
         currentRoom.setSize(room.getSize());
         currentRoom.setType(room.getType());
+        currentRoom.setRent(room.getRent());
         
         
         

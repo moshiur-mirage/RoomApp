@@ -1,6 +1,6 @@
 export class Room {
   id: number;
   type: string;
-  size: number
-  
+  size: number;
+  rent: number;
 }

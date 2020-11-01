@@ -39,6 +39,7 @@ export class RoomsComponent implements OnInit {
       id: null,
       type: '',
       size: null,
+      rent: null,
     };
   }
 }

@@ -72,7 +72,7 @@ public class RoomRepository implements RoomService{
     }
 
     @Override
-    public List<Room> viewBySize(int size) {
+    public List<Room> viewBySize(String size) {
         Session session = sessionFactory.getCurrentSession();
         Criteria crit = session.createCriteria(Room.class);
         crit.add(Restrictions.eq("size", size));

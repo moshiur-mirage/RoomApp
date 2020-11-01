@@ -5,19 +5,29 @@
     <mat-card-content>
         <div class="row">
             <div class="col-md-6">
-                <mat-form-field>
-                    <mat-label>Room Type</mat-label>
-                    
-                    <input matInput placeholder="Write Room type" type="text"
-                    [(ngModel)]="rtype">
-                    </mat-form-field>
+
+                <mat-label>Room Type</mat-label>
+
+
+                <select name="roomtype" id="roomT" required [(ngModel)]="rtype">
+
+                    <option value="suit">Suit</option>
+                    <option value="delux">Delux</option>
+                    <option value="cabin">Cabin</option>
+                    <option value="penthouse">Penthouse</option>
+                </select>
+
+                <!-- <input matInput placeholder="Write Room type" type="text"
+                    [(ngModel)]="rtype"> -->
+
             </div>
-            
+
             <div class="row">
 
                 <div class="col-md-12">
-                    <button class="btn btn-success" (click)="generateReport()"> <i class="fa fa-save"></i> Generate Report</button>
-                    
+                    <button class="btn btn-success" (click)="generateReport()"> <i class="fa fa-save"></i> Generate
+                        Report</button>
+
                 </div>
             </div>
         </div>

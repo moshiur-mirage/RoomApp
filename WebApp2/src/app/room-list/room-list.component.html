@@ -4,6 +4,7 @@
             <th scope="col">Id</th>
             <th scope="col">Room Type</th>
             <th scope="col">Room Size</th>
+            <th scope="col">Rent</th>
 
         </tr>
     </thead>
@@ -12,19 +13,20 @@
             <td scope="row">{{room.id}}</td>
             <td>{{room.type}}</td>
             <td>{{room.size}}</td>
+            <td>{{room.rent}}</td>
             <td>
-                
 
-                <button type="submit" class="btn btn-success" (click)="editRoom(room)">Edit Room
+
+                <button type="submit" class="btn btn-success" (click)="editRoom(room)">Edit
                 </button>&nbsp;
             </td>
             <td>
 
-                <button type="submit" class="btn btn-success" (click)="deleteRoom(room.id)">Delete Room
+                <button type="submit" class="btn btn-success" (click)="deleteRoom(room.id)">Delete
                 </button>&nbsp;
-                    
 
-                
+
+
 
             </td>
         </tr>

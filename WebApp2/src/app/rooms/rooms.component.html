@@ -3,27 +3,36 @@
     <!-- <form> -->
     <div class="form-group">
         <label for="roomid">Room Id</label>
-        <input type="text" class="form-control" id="name" [(ngModel)]="roomService.currentRoom.id"
-            name="custid">
+        <input type="text" class="form-control" id="name" [(ngModel)]="roomService.currentRoom.id" name="custid">
     </div>
 
     <div class="form-group">
-        <label for="phoneno">Room Type.</label>
-            <select name="roomtype" id="roomT" required [(ngModel)]="roomService.currentRoom.type">
-                <option value="ac">AC</option>
-                <option value="Non-Ac">NON-AC</option>
-            </select>
+        <label for="type">Room Type.</label>
+        <select name="roomtype" id="roomT" required [(ngModel)]="roomService.currentRoom.type">
+
+            <option value="suit">Suit</option>
+            <option value="delux">Delux</option>
+            <option value="cabin">Cabin</option>
+            <option value="penthouse">Penthouse</option>
+        </select>
     </div>
 
     <div class="form-group">
-        <label for="roomno">Room size</label>
-        <input type="number" class="form-control" id="number" required
-            [(ngModel)]="roomService.currentRoom.size" name="sizeroom">
+        <label for="rent">Bed Size</label>
+        <input type="number" class="form-control" id="number" required [(ngModel)]="roomService.currentRoom.size"
+            name="rentRoom">
+    </div>
+
+
+    <div class="form-group">
+        <label for="rent">Rent</label>
+        <input type="number" class="form-control" id="number" required [(ngModel)]="roomService.currentRoom.rent"
+            name="rentRoom">
     </div>
 
 
 
-    
+
 
 
 
@@ -31,12 +40,10 @@
     <!-- <div type="submit" class="btn btn-info">Add</div> -->
     <button type="submit" class="btn btn-success" (click)="createRoom(roomService.currentRoom)">Add
     </button>&nbsp;
-    <button type="submit" class="btn btn-info"
-        (click)="updateRoom(roomService.currentRoom)">Update</button>&nbsp;
+    <button type="submit" class="btn btn-info" (click)="updateRoom(roomService.currentRoom)">Update</button>&nbsp;
     <button type="submit" class="btn btn-primary" (click)="clear()">Refresh</button>
     <!-- </form> -->
 
 
 
 </div>
-

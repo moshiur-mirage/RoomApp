@@ -29,44 +29,49 @@ public class Room {
     private int size;
     @Column
     private String type;
+    @Column 
+    private Integer rent;
+	public Room() {
+		
+	}
+	public Room(Integer id, int size, String type, Integer rent) {
+		super();
+		this.id = id;
+		this.size = size;
+		this.type = type;
+		this.rent = rent;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public int getSize() {
+		return size;
+	}
+	public void setSize(int size) {
+		this.size = size;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public Integer getRent() {
+		return rent;
+	}
+	public void setRent(Integer rent) {
+		this.rent = rent;
+	}
+	
+	
     
     
-
-    public Room() {
-    }
-
-    public Room(Integer id, int size, String type) {
-        this.id = id;
-        this.size = size;
-        this.type = type;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
     
-    
-    
+
+
     
     
 }

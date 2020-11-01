@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReportsComponent } from './reports/reports.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { RoomInfoComponent } from './room-info/room-info.component';
 
 
 
@@ -22,7 +23,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     AppComponent,
     RoomsComponent,
     RoomListComponent,
-    ReportsComponent
+    ReportsComponent,
+    RoomInfoComponent
   ],
   imports: [
     BrowserModule,

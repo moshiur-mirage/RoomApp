@@ -35,5 +35,5 @@ public interface RoomService {
     public List<Room> viewByType(String type);
 
     //getBySize
-    public List<Room> viewBySize(int size);
+    public List<Room> viewBySize(String size);
 }
